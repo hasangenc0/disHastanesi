@@ -1,0 +1,20 @@
+https://github.com/hasangenc0/disHastanesi/ urline gidip fork butonuna bas
+artık repostory senin profiline fork edildi.
+kendi profilindeki forkladığın disHastanesi projesini clone la
+örnek: git clone https://github.com/flusch/disHastanesi.git
+
+daha sonra projenin içine git ve şu komutları çalıştır
+git checkout master
+git checkout -b yeni-branch-adi
+
+daha sonra değişikliklerini yap ve benle paylaşmak için 
+git add .
+git commit -m "yaptığın değişiklikler ile ilgili bilgi"
+git push origin yeni-branch-adi
+
+daha sonra değişikleri benim görebilmem için
+https://github.com/hasangenc0/disHastanesi/ adresine git ve Compare & pull request butonuna tıkla ve açılan sayfada ayarlamaları yaparak Create Pull Request butonuna bas
+
+Projeyi güncel tutmak için
+git checkout master
+git pull upstream master && git push origin master
