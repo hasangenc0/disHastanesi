@@ -8,14 +8,14 @@ import javax.faces.bean.ManagedBean;
  */
 @ManagedBean(name = "home", eager = true)
 public class home {
-    
+
     String title = "Diş Hastanesi";
-    
+
     public home () {
     }
-    
+
     public String getTitle() {
         return this.title;
     }
-    
+
 }
