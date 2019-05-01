@@ -1,15 +1,43 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 html {
-  background: #1a745c;
+  background: #343a40;
 }
 body {
   -webkit-font-smoothing: antialiased;
+  --menu: #204259;
+  --footer: #122430;
 }
 .container-fluid {
   padding: 0;
 }
 
+/* Carousel */
+.carousel-item {
+  height: 400px!important;
+  max-width:100%;
+}
+
+.carousel-item > img {
+  height: 100%;
+}
+
+/* Navbar */
+.navbar-special {
+  background-color: var(--menu);
+}
+.navbar .navbar-brand {
+  font-size: 30px;
+}
+.navbar .nav-item {
+  padding: 0 1vh;
+}
+.navbar .nav-link {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+/* Footer */
 section {
   padding: 60px 0;
 }
@@ -21,7 +49,7 @@ section .section-title {
   text-transform: uppercase;
 }
 #footer {
-  background: #1a745c !important;
+  background: var(--footer);
 }
 #footer h5{
 padding-left: 10px;
