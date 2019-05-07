@@ -1,4 +1,8 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&subset=latin-ext');
+html, body {
+  height: 100%;
+}
 
 html {
   background: #343a40;
@@ -7,6 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   --menu: #204259;
   --footer: #122430;
+  font-family: 'Ubuntu', sans-serif;
 }
 .container-fluid {
   padding: 0;
@@ -14,8 +19,21 @@ body {
 
 /* Carousel */
 .carousel-item {
-  height: 400px!important;
-  max-width:100%;
+  min-height: 320px;
+  height: 38.44vw;
+}
+
+.carousel-content {
+  color: #000000;
+  font-size: 48px;
+  top: 16%;
+  left: 3%;
+  width: 620px;
+  line-height: 1.2;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  width: 5%;
 }
 
 .carousel-item > img {
