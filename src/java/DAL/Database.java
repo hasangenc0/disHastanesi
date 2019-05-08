@@ -1,8 +1,8 @@
 package DAL;
 
 public class Database {
-    String db = "dishastanesi";
-    String uri = "jdbc:postgresql://localhost:5432/" + db;
-    String user = "root";
-    String pass = "root";
+    static String db = "dishastanesi";
+    static String uri = "jdbc:postgresql://localhost:5432/dishastanesi";
+    static String user_name = "root";
+    static String pass = "root";
 }
