@@ -40,7 +40,7 @@
                         <a class="nav-link text-white" href="#">Hizmetlerimiz</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Randevu</a>
+                        <h:link class="nav-link text-white" value="Randevu" outcome="appoinment" />
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#">İletişim</a>
@@ -79,8 +79,21 @@
                         </li>
                     </c:if>
                     <c:if test="#{signin.user.firstname != null }">
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link text-white dropdown-toggle"
+                                id="navbarDropdownMenuLink2"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                                #{signin.user.firstname}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                                <h:link class="dropdown-item" value="Randevularım" outcome="applisting"/>
+                            </div>
+                        </li>
                         <li class="nav-item">
-                            <h:link class="nav-link text-white" value="#{signin.user.firstname}" outcome="index"/>
+                            <h:form> <h:commandButton class="nav-link text-white" style="background:transparent;" value="Çıkış" action="index.xhtml" actionListener="#{signin.logout}"/> </h:form>
                         </li>
                     </c:if>
 

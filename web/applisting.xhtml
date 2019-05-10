@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+
+    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>${home.title}</title>
+        <ui:include src="/partials/styles.xhtml" />
+    </h:head>
+
+    <h:body>
+        <div class="container-fluid">
+
+            <ui:include src="/partials/menu.xhtml" />
+
+            <div class="container-fluid p-3 py-4 px-5">
+                <c:if test="#{signin.user.firstname == null}">
+                    <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">Dikkat!</h4>
+                        <p>Randevu alabilmek için giriş yapmalısın</p>
+                        <hr/>
+                        <p class="mb-0"><h:link value="Giriş Yap" outcome="signin"/></p>
+                    </div>
+                </c:if>
+
+                <c:if test="#{signin.user.firstname != null }">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Doktor</th>
+                                <th scope="col">Tarih</th>
+                                <th scope="col">Saat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ui:repeat value="#{appoinment.appList}" var="app">
+                                <tr>
+                                    <td></td>
+                                    <td>#{app.doctorFirstName} #{app.doctorLastName}</td>
+                                    <td>#{app.date}</td>
+                                    <td>#{app.clock}</td>
+                                </tr>
+                            </ui:repeat>
+
+                        </tbody>
+                    </table>
+                </c:if>
+            </div>
+
+            <ui:include src="/partials/services.xhtml" />
+
+            <ui:include src="/partials/footer.xhtml" />
+
+        </div>
+        <ui:include src="/partials/scripts.xhtml" />
+    </h:body>
+</html>

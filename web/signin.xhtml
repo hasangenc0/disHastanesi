@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:a="http://xmlns.jcp.org/jsf/passthrough" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:a="http://xmlns.jcp.org/jsf/passthrough" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
         <title>${signin.title}</title>
         <ui:include src="/partials/styles.xhtml" />
@@ -12,6 +13,14 @@
             <ui:include src="/partials/menu.xhtml" />
 
             <div class="container my-3">
+
+                <c:if test="#{signup.error != null}">
+                    <div class="alert alert-danger" role="alert">
+                        #{signup.error}
+                    </div>
+
+                </c:if>
+
                 <div class="card bg-light mx-auto" style="width: fit-content;">
                     <article class="card-body mx-auto" style="width: 400px;">
                         <h:form>
@@ -32,7 +41,7 @@
                                 </div>
                                 <h:inputSecret required="true" requiredMessage="Şifre Alanı Zorunludur." class="form-control" a:placeholder="Şifre" value="#{signin.user.password}" id="password" type="password"></h:inputSecret>
                             </div>
-                            
+
                             <div class="form-group">
                                 <h:commandButton class="btn btn-primary btn-block" value="Giriş Yap" action="index.xhtml" actionListener ="#{signin.submit}" />
                             </div>
