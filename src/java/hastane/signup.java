@@ -3,36 +3,51 @@ package hastane;
 import javax.faces.context.ExternalContext;
 import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 
 /**
  *
  * @author hasangenc
  */
-
 @ManagedBean(name = "signup", eager = true)
-@SessionScoped
+@RequestScoped
 public class signup {
+    
+    public String error = null;
 
-  public User user = new User();
+    public User user = new User();
 
-  public String title = "Üye Ol";
+    public String title = "Üye Ol";
+    
+    public boolean submit() {
+        if (DAL.User.saveUser(user)) {
+            this.setError(null);
+            return true;
+        }
+        
+        this.setError(user.getEmail() + " mail hesabı ile kayıtlı üye mevcut.");
+        
+        return false;
+    }
 
-  public User getUser() {
-    return this.user;
-  }
+    public User getUser() {
+        return this.user;
+    }
+    
+    public String getError() {
+        return this.error;
+    }
 
-  public String getTitle() {
-    return this.title;
-  }
+    public String getTitle() {
+        return this.title;
+    }
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
-  public boolean submit() {
-    DAL.User.saveUser(user);
-
-    return true;
-  }
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    
+    public void setError(String error) {
+        this.error = error;
+    }
 
 }

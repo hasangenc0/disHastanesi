@@ -10,6 +10,7 @@ import javax.faces.bean.SessionScoped;
 
 public class User implements IUser  {
 
+  private int id;
   public String firstname ;
   public String lastname;
   public String tcid ;
@@ -104,5 +105,19 @@ public class User implements IUser  {
   public void setPassword(String password) {
     this.password = password;
   }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
 
 }

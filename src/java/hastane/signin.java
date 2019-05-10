@@ -23,6 +23,10 @@ public class signin {
         return this.title;
     }
 
+    public void setUser(User user) {
+        this.user = user;
+    }
+    
     public void setTitle(String title) {
         this.title = title;
     }
@@ -37,6 +41,10 @@ public class signin {
         }
 
         return true;
+    }
+    
+    public void logout () {
+        this.setUser(new User());
     }
 
 }
