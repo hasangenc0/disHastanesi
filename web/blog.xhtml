@@ -5,19 +5,82 @@
   xmlns:h="http://xmlns.jcp.org/jsf/html"
   xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 >
-  <h:head>
-    <title>${home.title}</title>
-    <ui:include src="/partials/styles.xhtml" />
-  </h:head>
+    <h:head>
+        <title>${home.title}</title>
+        <ui:include src="/partials/styles.xhtml" />
+    </h:head>
 
-  <h:body>
-    <div class="container-fluid">
+    <h:body>
+        <div class="container-fluid">
+            <ui:include src="/partials/menu.xhtml" />
+        </div>
+        
+        <div class="container-fluid p-3 py-4 px-5" style="background: #e8f2f3;">
+            <div class="card">
+                <div class="card-body">
+                    <a href="blog1.xhtml"><img class="card-text" width="50%" height="50%" src="resources/img/blog/blog1.jpg"></img></a>
+                    <h3 class="card-title"><br></br><a href="blog1.xhtml">BİR GÜLÜŞ TASARIMI “PEMBE ESTETİK”</a></h3>
+                    <p class="card-text">Her insan güzel gülümsemek ister. Kusursuz bir gülümseme içinse inci gibi dişlere sahip olmak
+                        yeterli değil. Diş etlerinin de dişlerinizle uyumlu olması gerekiyor. Dişe sıkıca yapışan ve parlak diş etlerine
+                        yine de tam olarak sağlıklı diyebilmemiz için de renginin pembe olması gerekiyor. Tıp bu duruma da çaresiz değil;
+                        “Pembe Estetik” ile size gülümsemenizi arm... <a href="blog1.xhtml">Devamı için tıklayın</a></p>
+                </div>
+            </div>
+        </div>
 
-      <ui:include src="/partials/menu.xhtml" />
+        <div class="container-fluid p-3 py-4 px-5" style="background: #e8f2f3;">
+            <div class="card">
+                <div class="card-body">
+                    <a href="blog2.xhtml"><img class="card-text" width="50%" height="50%" src="resources/img/blog/blog2.jpg"></img></a>
+                    <h3 class="card-title"><br></br><a href="blog2.xhtml">DİŞ BEYAZLATMA NEDİR VE KİMLERE UYGULANIR?</a></h3>
+                    <p class="card-text">Hidrojen Peroksit veya Türevleri kullanılarak yapılan bir ağartma (renk açma) işlemidir. 
+                        Kullanılan maddeler oksijen açığa çıkarır. Oksijenin ayrılmasıyla birlikte dişin rengi de  açılır. 
+                        Bu işlem; sarı, kahverengi veya gri renkli dişleri olan kişilerin daha beyaz dişleri olm... 
+                        <a href="blog2.xhtml">Devamı için tıklayın</a></p>
+                </div>
+            </div>
+        </div>
 
-    </div>
-    <ui:include src="/partials/scripts.xhtml" />
-
-    <ui:include src="/partials/footer.xhtml" />
-  </h:body>
+        <div class="container-fluid p-3 py-4 px-5" style="background: #e8f2f3;">
+            <div class="card">
+                <div class="card-body">
+                    <a href="blog3.xhtml"><img class="card-text" width="50%" height="50%" src="resources/img/blog/blog3.jpg"></img></a>
+                    <h3 class="card-title"><br></br><a href="blog3.xhtml">HAMİLELİKTE AĞIZ VE DİŞ SAĞLIĞI</a></h3>
+                    <h6 class="card-text"><b>Hamileliğim sırasında ağzımda neler değişiyor?</b></h6>
+                    <p class="card-text">Hayatınızın çok önemli bir dönemindesiniz. Yakın bir zamanda bir bebeğiniz olacak. Hamilelik 
+                        sırasında ağız ve diş sağlığında bazı değişikliklerin olacağı bir gerçektir. En önemli değişiklik östrojen ve 
+                        progesteron hormon düzeylerindeki artış olup, bu durum dişler ve dişetlerinde olası sorunların daha büyük olm... 
+                        <a href="blog3.xhtml">Devamı için tıklayın</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container-fluid p-3 py-4 px-5" style="background: #e8f2f3;">
+            <div class="card">
+                <div class="card-body">
+                    <a href="blog4.xhtml"><img class="card-text" width="50%" height="50%" src="resources/img/blog/blog4.jpg"></img></a>
+                    <h3 class="card-title"><br></br><a href="blog4.xhtml">ORTODONTİK TEDAVİ NEDİR?</a></h3>
+                    <p class="card-text">Ortodonti dişlerin çapraşıklıkları, çene kemiklerinin birbirleri ve kafa kemikleri ile 
+                        ilişkisini inceleyen ve bunlara bağlı mevcut problemlerin teşhisini koyan bilim dalıdır. Ortodontik tedavi 
+                        de bu sistemde oluşan boz... <a href="blog4.xhtml">Devamı için tıklayın</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container-fluid p-3 py-4 px-5" style="background: #e8f2f3;">
+            <div class="card">
+                <div class="card-body">
+                    <a href="blog5.xhtml"><img class="card-text" width="50%" height="50%" src="resources/img/blog/blog5.jpg"></img></a>
+                    <h3 class="card-title"><br></br><a href="blog5.xhtml">BEBEKLİKTEN ÇOCUKLUĞA SAĞLIKLI DİŞLER</a></h3>
+                    <h6 class="card-text"><b>Bebeğimin dişleri çıkıyor….</b></h6>
+                    <p class="card-text">Bebeğiniz 6.ayından itibaren ilk süt dişlerini çıkarmaya başlar. Süt dişleri bebeklerin 
+                        gelişiminde önemlidir. Yiyeceklerin çiğnenmesinde, konuşmada, estetik olarak güzel görünmede ve kalıcı 
+                        dişlerin normal pozisyonda çıkm... <a href="blog5.xhtml">Devamı için tıklayın</a></p>
+                </div>
+            </div>
+        </div>
+      
+        <ui:include src="/partials/scripts.xhtml" />
+        <ui:include src="/partials/footer.xhtml" />
+    </h:body>
 </html>
