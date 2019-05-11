@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+
+    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>${home.title} Admin Paneli</title>
+        <ui:include src="/partials/styles.xhtml" />
+    </h:head>
+
+    <h:body>
+        <ui:include src="/partials/menu.xhtml" />
+        <c:if test="#{signin.user.admin == true}">
+            <div class="container-fluid">
+                <div id="wrapper" class="row">
+
+                    <ui:include src="/partials/adminPanelSideBar.xhtml" />
+
+                    <div class="col-lg-9 container pt-3" style="height: -webkit-fill-available;">
+
+                        <h2> #{admin.userCount} Kullanıcı Listelendi </h2>
+                        
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Ad</th>
+                                    <th scope="col">Soyad</th>
+                                    <th scope="col">TC</th>
+                                    <th scope="col">E-Posta</th>
+                                    <th scope="col">Telefon</th>
+                                    <th scope="col">Tip</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <ui:repeat value="#{admin.allUsers}" var="user">
+                                    <tr>
+                                        <td></td>
+                                        <td>#{user.firstname}</td>
+                                        <td>#{user.lastname}</td>
+                                        <td>#{user.tcid}</td>
+                                        <td>#{user.email}</td>
+                                        <td>#{user.phone}</td>
+                                        <td>${user.admin ? "Yönetici" : "Standart"}</td>
+                                    </tr>
+                                </ui:repeat>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+        </c:if>
+        <c:if test="#{signin.user.admin == false}">
+            Böyle Bir Sayfa Yok
+        </c:if>
+        <ui:include src="/partials/scripts.xhtml" />
+    </h:body>
+</html>

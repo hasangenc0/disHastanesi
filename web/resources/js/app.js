@@ -2,7 +2,7 @@
  * @author hasan genc
  */
 
-(function(){
+(function () {
     console.log("Dis Hekimi Yazılımı");
 })();
 
@@ -13,4 +13,6 @@ $('.datepicker').datepicker({
     autoclose: true
 });
 
-$('.datepicker').datepicker( 'setDate', new Date() );
+$('.datepicker').datepicker('setDate', new Date());
+
+// Admin Panel

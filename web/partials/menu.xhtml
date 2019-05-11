@@ -89,6 +89,9 @@
                                 #{signin.user.firstname}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                                <c:if test="#{signin.user.admin == true}">
+                                    <h:link class="dropdown-item" value="Admin Paneli" outcome="adminpanel"/>
+                                </c:if>
                                 <h:link class="dropdown-item" value="Randevularım" outcome="applisting"/>
                             </div>
                         </li>
