@@ -10,12 +10,58 @@ package hastane;
  * @author hasangenc
  */
 public class AppList {
+    
     private String userFirstName;
     private String userLastName;
     private String doctorFirstName;
     private String doctorLastName;
+    private String userTc;
+    private String userMail;
+    private String userPhone;
     private String date;
     private String clock;
+    
+    /**
+     * @return the userTc
+     */
+    public String getUserTc() {
+        return userTc;
+    }
+
+    /**
+     * @param userTc the usetTc to set
+     */
+    public void setUserTc(String userTc) {
+        this.userTc = userTc;
+    }
+
+    /**
+     * @return the userMail
+     */
+    public String getUserMail() {
+        return userMail;
+    }
+
+    /**
+     * @param userMail the userMail to set
+     */
+    public void setUserMail(String userMail) {
+        this.userMail = userMail;
+    }
+
+    /**
+     * @return the userPhone
+     */
+    public String getUserPhone() {
+        return userPhone;
+    }
+
+    /**
+     * @param userPhone the userPhone to set
+     */
+    public void setUserPhone(String userPhone) {
+        this.userPhone = userPhone;
+    }
 
     /**
      * @return the userFirstName

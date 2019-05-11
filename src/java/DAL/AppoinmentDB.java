@@ -5,9 +5,9 @@
  */
 package DAL;
 
+import static DAL.Database.uri;
 import hastane.Appoinment;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -49,14 +49,15 @@ public class AppoinmentDB extends Database {
         }
     }
 
-    public static ArrayList<hastane.AppList> getAppoinments() {
+    public static ArrayList<hastane.AppList> getAppoinments(Appoinment app) {
         try (
                 Connection connection = DriverManager.getConnection(uri, user_name, pass);
                 PreparedStatement st = connection.prepareStatement(
                         "select t1.date, t1.clock, t2.firstname as usrfn, t2.lastname as usrln, t3.first_name as drfn, t3.second_name as drln\n"
                         + "from appoinments t1 inner join users t2 on t1.user_id = t2.id\n"
-                        + "inner join doctors t3 on t1.doctor_id=t3.id")) {
+                        + "inner join doctors t3 on t1.doctor_id=t3.id WHERE tcid = ?")) {
 
+            st.setString(1, app.getSignin().getUser().getTcid());
             ResultSet rs = st.executeQuery();
 
             ArrayList<hastane.AppList> appList = new ArrayList<hastane.AppList>();
@@ -106,6 +107,57 @@ public class AppoinmentDB extends Database {
             System.out.println(e);
             return false;
 
+        }
+    }
+    
+    public static ArrayList<hastane.AppList> getAllApps() {
+        try (
+                Connection connection = DriverManager.getConnection(uri, user_name, pass);
+                PreparedStatement st = connection.prepareStatement(
+                        "select t1.date, t1.clock, t2.firstname as usrfn, t2.lastname as usrln, t2.phone as usrphone, t2.email as usrmail, t2.tcid as usrtc, t3.first_name as drfn, t3.second_name as drln\n"
+                        + "from appoinments t1 inner join users t2 on t1.user_id = t2.id\n"
+                        + "inner join doctors t3 on t1.doctor_id=t3.id")) {
+            ResultSet rs = st.executeQuery();
+
+            ArrayList<hastane.AppList> appList = new ArrayList<>();
+            
+            while (rs.next()) {
+                hastane.AppList tmp = new hastane.AppList();
+                tmp.setUserFirstName(rs.getString("usrfn"));
+                tmp.setUserLastName(rs.getString("usrln"));
+                tmp.setUserPhone(rs.getString("usrphone"));
+                tmp.setUserMail(rs.getString("usrmail"));
+                tmp.setUserTc(rs.getString("usrtc"));
+                tmp.setDoctorFirstName(rs.getString("drfn"));
+                tmp.setDoctorLastName(rs.getString("drln"));
+                tmp.setClock(rs.getString("clock"));
+                tmp.setDate(rs.getDate("date").toString());
+                appList.add(tmp);
+            }
+
+            return appList;
+
+        } catch (SQLException e) {
+            return null;
+
+        }
+    }
+
+    public static int getAppCount() {
+        try (
+                Connection connection = DriverManager.getConnection(uri, user_name, pass);
+                PreparedStatement st = connection.prepareStatement("SELECT COUNT(*) AS total FROM appoinments")) {
+
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                return rs.getInt("total");
+            }
+
+            return 0;
+
+        } catch (SQLException e) {
+            System.out.println(e);
+            return 0;
         }
     }
 }

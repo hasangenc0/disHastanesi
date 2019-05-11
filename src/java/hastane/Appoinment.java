@@ -141,7 +141,7 @@ public class Appoinment {
      * @return the appList
      */
     public ArrayList<hastane.AppList> getAppList() {
-        return DAL.AppoinmentDB.getAppoinments();
+        return DAL.AppoinmentDB.getAppoinments(this);
     }
 
     /**
