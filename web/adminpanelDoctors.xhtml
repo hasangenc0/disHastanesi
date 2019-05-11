@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>${home.title} Admin Paneli</title>
+        <ui:include src="/partials/styles.xhtml" />
+    </h:head>
+
+    <h:body>
+        <ui:include src="/partials/menu.xhtml" />
+        <c:if test="#{signin.user.admin == true}">
+            <div class="container-fluid">
+                <div id="wrapper" class="row">
+
+                    <ui:include src="/partials/adminPanelSideBar.xhtml" />
+
+                    <div class="col-lg-9 container pt-3" style="height: -webkit-fill-available;">
+
+                        <h2> #{admin.doctorCount} Doktor Listelendi </h2>
+
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Ad</th>
+                                    <th scope="col">Soyad</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <h:form> 
+                                        <td></td>
+                                        <td>
+                                            <div class="form-group input-group">
+                                                <h:inputText class="form-control" value="#{admin.doctor.firstName}" p:placeholder="İsim" id="name"></h:inputText>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            <div class="form-group input-group">
+                                                <h:inputText class="form-control" value="#{admin.doctor.lastName}" p:placeholder="Soyisim" id="lastname"/>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            <h:commandButton class="nav-link text-green" style="background:transparent;" value="Ekle" action="adminPanelDoctor.xhtml" actionListener="#{admin.addDoctor}"/> 
+                                        </td>
+                                    </h:form>
+
+                                </tr>
+                                <ui:repeat value="#{admin.allDoctors}" var="doctor">
+                                    <tr>
+                                        <h:form>
+                                            <input type="hidden" name="doctorId" value="#{doctor.id}"/>
+                                            <td></td>
+                                            <td>#{doctor.firstName}</td>
+                                            <td>#{doctor.lastName}</td>
+                                            <td>
+                                                <h:commandButton class="btn btn-danger" value="Sil" action="adminPanelDoctor.xhtml" actionListener="#{admin.deleteDoctor}"/> 
+                                            </td>
+                                        </h:form>
+                                    </tr>
+                                </ui:repeat>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+        </c:if>
+        <c:if test="#{signin.user.admin == false}">
+            Böyle Bir Sayfa Yok
+        </c:if>
+        <ui:include src="/partials/scripts.xhtml" />
+    </h:body>
+</html>

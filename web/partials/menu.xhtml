@@ -1,83 +1,108 @@
 <ui:composition
-  xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:f="http://xmlns.jcp.org/jsf/core"
-  xmlns:h="http://xmlns.jcp.org/jsf/html"
-  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
->
-  <nav class="navbar navbar-expand-lg navbar-light px-5">
-    <h:link class="navbar-brand" outcome="index">
-        <h:graphicImage
-            library="img"
-            name="logo.jpg"
-            style="height: 64px;"
-            class="d-inline-block align-top"
-            alt=""
-        />
-    </h:link>
-  </nav>
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 
-  <div class="header-secondnav sticky-top">
-    <nav class="navbar navbar-expand-lg navbar-special">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav m-auto">
-          <li class="nav-item active">
-            <a class="nav-link text-white" href="#"
-              >Anasayfa<span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <h:link class="nav-link text-white" value="Hizmetlerimiz" outcome="hizmetler" />
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#">Randevu</a>
-          </li>
-          <li class="nav-item">
-            <h:link class="nav-link text-white" value="İletişim" outcome="iletisim" />
-          </li>
-          <li class="nav-item">
-            <h:link class="nav-link text-white" value="Galeri" outcome="galeri" />
-          </li>
-          <li class="nav-item">
-            <h:link class="nav-link text-white" value="Hakkımızda" outcome="hakkimizda" />
-          </li>
-          <li class="nav-item">
-            <h:link class="nav-link text-white" value="Blog" outcome="blog" />
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link text-white dropdown-toggle"
-              id="navbarDropdownMenuLink"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Kurumsal
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <h:link class="dropdown-item" value="İnsan Kaynakları" outcome="kurumsal-hr" />
-              <h:link class="dropdown-item" value="Açık Pozisyonlar" outcome="kurumsal-kariyer" />
-            </div>
-          </li>
-          <li class="nav-item">
-            <h:link class="nav-link text-white" value="Üye Ol" outcome="signup" />
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#">Giriş Yap</a>
-          </li>
-        </ul>
-      </div>
+    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <nav class="navbar navbar-expand-lg navbar-light px-5">
+        <h:link class="navbar-brand" outcome="index">
+            <h:graphicImage
+                library="img"
+                name="logo.jpg"
+                style="height: 64px;"
+                class="d-inline-block align-top"
+                alt=""
+                />
+        </h:link>
     </nav>
-  </div>
+
+    <div class="header-secondnav sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-special">
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link text-white" href="#">Anasayfa<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Hizmetlerimiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <h:link class="nav-link text-white" value="Randevu" outcome="appoinment" />
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">İletişim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Galeri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a
+                            class="nav-link text-white dropdown-toggle"
+                            id="navbarDropdownMenuLink"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            >
+                            Kurumsal
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">İnsan Kaynakları</a>
+                            <a class="dropdown-item" href="#">Açık Pozisyonlar</a>
+                        </div>
+                    </li>
+
+                    <c:if test="#{signin.user.firstname == null}">
+                        <li class="nav-item">
+                            <h:link class="nav-link text-white" value="Üye Ol" outcome="signup" />
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link text-white" value="Giriş Yap" outcome="signin" />
+                        </li>
+                    </c:if>
+                    <c:if test="#{signin.user.firstname != null }">
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link text-white dropdown-toggle"
+                                id="navbarDropdownMenuLink2"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                                #{signin.user.firstname}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                                <c:if test="#{signin.user.admin == true}">
+                                    <h:link class="dropdown-item" value="Admin Paneli" outcome="adminpanel"/>
+                                </c:if>
+                                <h:link class="dropdown-item" value="Randevularım" outcome="applisting"/>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <h:form> <h:commandButton class="nav-link text-white" style="background:transparent;" value="Çıkış" action="index.xhtml" actionListener="#{signin.logout}"/> </h:form>
+                        </li>
+                    </c:if>
+
+
+                </ul>
+            </div>
+        </nav>
+    </div>
 </ui:composition>

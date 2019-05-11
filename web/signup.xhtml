@@ -1,24 +1,87 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html
-  xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:h="http://xmlns.jcp.org/jsf/html"
-  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
->
-  <h:head>
-    <title>${signup.title}</title>
-    <ui:include src="/partials/styles.xhtml" />
-  </h:head>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:a="http://xmlns.jcp.org/jsf/passthrough" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+  <title>${signup.title}</title>
+  <ui:include src="/partials/styles.xhtml" />
+</h:head>
 
-  <h:body>
-    <div class="container-fluid">
+<h:body>
+  <div class="container-fluid content">
 
-      <ui:include src="/partials/menu.xhtml" />
-      Hasan
+    <ui:include src="/partials/menu.xhtml" />
 
+    <div class="container my-3">
+      <div class="card bg-light mx-auto" style="width: fit-content;">
+        <article class="card-body mx-auto" style="width: 400px;">
+          <h:form>
+            <h4 class="card-title mt-3 text-center">Hesap Oluşturun</h4>
+            <p class="text-center">Ücretsiz Hesap Oluşturmaya Başlayın</p>
+
+              <h:message for="firstname" class="text-danger"><br/></h:message>
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <h:inputText class="form-control" value="#{signup.user.firstname}" a:placeholder="İsim" id="firstname" required="true" requiredMessage="İsim Alanı Zorunludur." ></h:inputText>
+              </div>
+
+              <h:message for="lastname" class="text-danger"><br/></h:message>
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <h:inputText required="true" requiredMessage="Soyisim Alanı Zorunludur." class="form-control" value="#{signup.user.lastname}" a:placeholder="Soyisim" id="lastname"></h:inputText>
+              </div>
+              
+              <h:message for="tcid" class="text-danger"><br/></h:message>
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"> <i class="fa fa-id-card"></i> </span>
+                </div>
+                <h:inputText required="true" requiredMessage="TC Alanı Zorunludur." class="form-control" value="#{signup.user.tcid}" a:placeholder="TC Kimlik No" id="tcid"></h:inputText>
+              </div>
+              
+              <h:message for="email" class="text-danger"><br/></h:message>
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                </div>
+                <h:inputText required="true" requiredMessage="E-Posta Alanı Zorunludur." class="form-control" value="#{signup.user.email}" a:placeholder="E-Posta" id="email"></h:inputText>
+              </div> <!-- form-group// -->
+              
+              <h:message for="phone" class="text-danger"><br/></h:message>
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                </div>
+                <select class="custom-select" style="max-width: 120px;">
+                  <option selected="">+90</option>
+                </select>
+                <h:inputText required="true" requiredMessage="Telefon Alanı Zorunludur." class="form-control" a:placeholder="Telefon" value="#{signup.user.phone}" id="phone" type="tel"></h:inputText>
+              </div>
+              
+              <h:message for="password" class="text-danger"><br/></h:message>
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                <h:inputSecret required="true" requiredMessage="Şifre Alanı Zorunludur." class="form-control" a:placeholder="Şifre" value="#{signup.user.password}" id="password" type="password"></h:inputSecret>
+              </div>
+              
+              <div class="form-group">
+                <h:commandButton class="btn btn-primary btn-block" value="Üye Ol" action="signin.xhtml" actionListener ="#{signup.submit}" />
+              </div>
+              <p class="text-center">Zaten Üye misin ? <h:link value="Giriş Yap" outcome="signin"/> </p>
+
+          </h:form>
+        </article>
+      </div>
     </div>
-    <ui:include src="/partials/scripts.xhtml" />
-
     <ui:include src="/partials/footer.xhtml" />
-  </h:body>
+  </div>
+  <ui:include src="/partials/scripts.xhtml" />
+
+</h:body>
+
 </html>

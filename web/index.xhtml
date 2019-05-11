@@ -4,7 +4,8 @@
   xmlns="http://www.w3.org/1999/xhtml"
   xmlns:h="http://xmlns.jcp.org/jsf/html"
   xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
->
+      
+  xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
   <h:head>
     <title>${home.title}</title>
     <ui:include src="/partials/styles.xhtml" />
@@ -19,9 +20,9 @@
 
       <ui:include src="/partials/services.xhtml" />
 
+      <ui:include src="/partials/footer.xhtml" />
+      
     </div>
     <ui:include src="/partials/scripts.xhtml" />
-
-    <ui:include src="/partials/footer.xhtml" />
   </h:body>
 </html>

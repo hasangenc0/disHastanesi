@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class GetAppointments extends Database {
     
     public GetAppointments() {
-        try (Connection connection = DriverManager.getConnection(uri, user, pass)) {
+        try (Connection connection = DriverManager.getConnection(uri, user_name, pass)) {
             
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM appoinments;");

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>${home.title} Admin Paneli</title>
+        <ui:include src="/partials/styles.xhtml" />
+    </h:head>
+
+    <h:body>
+        <ui:include src="/partials/menu.xhtml" />
+        <c:if test="#{signin.user.admin != null}">
+            <div class="container-fluid">
+                <div id="wrapper" class="row">
+
+                    <ui:include src="/partials/adminPanelSideBar.xhtml" />
+
+                    <div class="col-lg-9 container pt-3" style="height: -webkit-fill-available;">
+
+                        <h2>Toplam #{admin.visitCount} kez site ziyaret edildi. </h2>
+
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Tarih</th>
+                                    <th scope="col">URL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <ui:repeat value="#{admin.allVisits}" var="visit">
+                                    <tr>
+                                        <td></td>
+                                        <td>#{visit.date}</td>
+                                        <td>#{visit.url}</td>
+                                    </tr>
+                                </ui:repeat>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+        </c:if>
+        <c:if test="#{signin.user.admin == false}">
+            Böyle Bir Sayfa Yok
+        </c:if>
+        <ui:include src="/partials/scripts.xhtml" />
+    </h:body>
+</html>

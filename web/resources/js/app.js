@@ -1,10 +1,18 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/*
+ * @author hasan genc
  */
 
-
-(function(){
+(function () {
     console.log("Dis Hekimi Yazılımı");
 })();
+
+$('.datepicker').datepicker({
+    format: 'dd.mm.yyyy',
+    startDate: '+3d',
+    language: 'tr',
+    autoclose: true
+});
+
+$('.datepicker').datepicker('setDate', new Date());
+
+// Admin Panel
