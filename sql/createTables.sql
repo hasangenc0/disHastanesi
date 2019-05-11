@@ -30,3 +30,13 @@ create table appoinments
     clock VARCHAR (5) NOT NULL
 );
 
+
+/* Visits table */
+create table visits
+(
+    id serial primary key NOT NULL,
+    date timestamp not null default CURRENT_TIMESTAMP, 
+    url VARCHAR (100) NOT NULL
+);
+
+
