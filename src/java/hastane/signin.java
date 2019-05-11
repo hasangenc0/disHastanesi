@@ -35,10 +35,6 @@ public class signin {
         this.user = DAL.User.getUser(user);
         
         System.out.println(this.user.getFirstname());
-        
-        if(user == null) {
-            
-        }
 
         return true;
     }

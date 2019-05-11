@@ -1,7 +1,5 @@
 package hastane;
 
-import javax.faces.context.ExternalContext;
-import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
