@@ -5,19 +5,84 @@
   xmlns:h="http://xmlns.jcp.org/jsf/html"
   xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 >
-  <h:head>
-    <title>${home.title}</title>
-    <ui:include src="/partials/styles.xhtml" />
-  </h:head>
+    <h:head>
+        <title>${home.title}</title>
+        <ui:include src="/partials/styles.xhtml" />
+    </h:head>
 
-  <h:body>
-    <div class="container-fluid">
-
-      <ui:include src="/partials/menu.xhtml" />
-
-    </div>
-    <ui:include src="/partials/scripts.xhtml" />
-
-    <ui:include src="/partials/footer.xhtml" />
-  </h:body>
+    <h:body>
+        <div class="container-fluid">
+            <ui:include src="/partials/menu.xhtml" />
+        </div>
+      
+        <div class="container-fluid p-3 py-4 px-5" style="background: #e8f2f3;">
+            
+            <h1 class="card-header">Hizmetlerimiz</h1><br></br>
+            
+            <div class="card-deck">
+                
+                <div class="card">
+                    <h:graphicImage library="img" name="services/image1.jpg" class="d-block w-100"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Genel Sorunlar</h5>
+                        <p class="card-text">Diş hekimlerimiz her türlü sorunlarınızla ilgilenmektedir.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h:graphicImage library="img" name="services/image2.jpg" class="d-block w-100"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Diş Estetiği</h5>
+                        <p class="card-text">Bu bölümümüzdeki hekimlerimiz dişlerinizin görünümünü iyileştirmeye odaklanır.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h:graphicImage library="img" name="services/image3.jpg" class="d-block w-100"/>
+                    <div class="card-body">
+                        <h5 class="card-title">İmplant Tedavisi</h5>
+                        <p class="card-text">Diş implantlarımız daha güvenle gülümsemenize yardımcı olacak.</p>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <br></br>
+            
+            <div class="card-deck">
+                
+                <div class="card">
+                    <h:graphicImage library="img" name="services/image4.jpg" class="d-block w-100"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Diş Beyazlatma</h5>
+                        <p class="card-text">Diş beyazlatma bölümümüzde gülüşlerinizi daha parlak hale getirmek için uğraşıyoruz.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h:graphicImage library="img" name="services/image5.jpg" class="d-block w-100"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Taç Tedavisi</h5>
+                        <p class="card-text">Diş Taçları dişleriniz arasındaki boşlukları doldurmak ve gülümsemenizi daha güzel 
+                            hale getirmek için güvenli bir yoldur.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h:graphicImage library="img" name="services/image6.jpg" class="d-block w-100"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Sedasyon Hizmeti</h5>
+                        <p class="card-text">Diş hekimlerimiz, her hastanın deneyimini güvenli ve kolay hale getirmek için ileri 
+                            eğitim almıştır.</p>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+          
+        <ui:include src="/partials/scripts.xhtml" />
+        <ui:include src="/partials/footer.xhtml" />
+        
+    </h:body>
 </html>

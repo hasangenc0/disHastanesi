@@ -11,6 +11,7 @@ create table "users"
   admin boolean DEFAULT false
 )
 
+
 /* Doctors table */
 create table doctors
 (
@@ -37,6 +38,39 @@ create table visits
     id serial primary key NOT NULL,
     date timestamp not null default CURRENT_TIMESTAMP, 
     url VARCHAR (100) NOT NULL
+);
+
+
+/* Contacts table */
+create table contacts
+(
+    id serial primary key NOT NULL,
+    fullname text NOT NULL,
+    email character varying(50) NOT NULL,
+    phone character varying(50) NOT NULL,
+    message VARCHAR NOT NULL
+);
+
+
+/* Jop application table */
+create table jobapp
+(
+    id serial primary key NOT NULL,
+    first_name VARCHAR (99) NOT NULL,
+    second_name VARCHAR (99) NOT NULL,
+    email character varying(50) NOT NULL,
+    phone character varying(50) NOT NULL,
+    department character varying(50) NOT NULL,
+    message VARCHAR NOT NULL
+);
+
+
+/* Blog table */
+create table contacts
+(
+    id serial primary key NOT NULL,
+    blogtitle VARCHAR (99) NOT NULL,
+    blogtext VARCHAR NOT NULL
 );
 
 

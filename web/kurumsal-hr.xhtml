@@ -5,19 +5,52 @@
   xmlns:h="http://xmlns.jcp.org/jsf/html"
   xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 >
-  <h:head>
-    <title>${home.title}</title>
-    <ui:include src="/partials/styles.xhtml" />
-  </h:head>
+    <h:head>
+        <title>${home.title}</title>
+        <ui:include src="/partials/styles.xhtml" />
+    </h:head>
 
-  <h:body>
-    <div class="container-fluid">
+    <h:body>
+        <div class="container-fluid">
+            <ui:include src="/partials/menu.xhtml" />
+        </div>
+        
+        <div class="container-fluid p-3 py-4 px-5" style="background: #e8f2f3;">
+            <h1 class="card-header">İNSAN KAYNAKLARI</h1>
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="card-text"><b>İnsan Kaynakları Politikamız</b></h6>
+                    <p class="card-text">Kurumumuza nitelikli iş gücü kazandırma adına, “Doğru işe doğru insan” ve “İşe göre insan 
+                        seçimi” ile işe alımı gerçekleştirmek ve kurumumuzu nitelikli kişilerce tercih edilen olma konumuma 
+                        getirmektir.</p><br></br>
+                    <h6 class="card-text"><b>İşe Alım</b></h6>
+                    <p class="card-text">Kurumumuzun strateji ve hedefleriyle bağlantılı olarak yeni bir pozisyon için işe alım 
+                        ihtiyacı doğduğunda;</p><br></br>
+                    <p class="card-text">– İş tanımı ve işin gerektirdiği yetkinlikler dikkate alınarak iç ve dış kaynaklar 
+                        değerlendirilir.</p>
+                    <p class="card-text">– Aranan pozisyonlarla ilgili detaylı bilgiler, internet işe alım siteleri ve gazete ilanları 
+                        yoluyla duyurulur.</p>
+                    <p class="card-text">– İnsan Kaynakları tarafından mülakat daveti organizasyonu gerçekleştirilir.</p>
+                    <p class="card-text">– İnsan Kaynakları ve Departman Yöneticisi tarafından mülakatlar aşamalı olarak 
+                        gerçekleştirilir.</p>
+                    <p class="card-text">– Ortak alınan olumlu kararlar doğrultusunda Genel Müdür onayına sunulur.</p>
+                    <p class="card-text">– Olumlu olan adaylara ücret teklifi yapılır.</p>
+                    <p class="card-text">– Olumlu adayların referans araştırması yapılır.</p>
+                    <p class="card-text">– İşe giriş evrak listesi teslim edilen adayın, işe başlangıcından 3 gün önce evrak teslimini 
+                        gerçekleştirmesi sağlanır.</p>
+                    <p class="card-text"> Olumsuz adaylara ise telefon ile bilgi verilir.</p><br></br>
+                    <h6 class="card-text"><b>Özlük Hakları:</b></h6>
+                    <p class="card-text">Ücret hakkı,</p>
+                    <p class="card-text">Dinlenme hakkı,</p>
+                    <p class="card-text">İş sağlığı ve güvenliği hakkı,</p>
+                    <p class="card-text">Kadın işçilere özgü haklar ve sağlanan korumalar,</p><br></br>
+                    <p class="card-text">Ve personelin tüm özlük hakları 4857 Numaralı İş Kanununu doğrultusunda uygulanmaktadır.</p><br></br>
+                    <p class="card-text">Açık pozisyonlarımızı görmek için <a href="kurumsal-kariyer.xhtml">lütfen tıklayınız.</a></p>
+                </div>
+            </div>
+        </div>
 
-      <ui:include src="/partials/menu.xhtml" />
-
-    </div>
-    <ui:include src="/partials/scripts.xhtml" />
-
-    <ui:include src="/partials/footer.xhtml" />
-  </h:body>
+        <ui:include src="/partials/scripts.xhtml" />
+        <ui:include src="/partials/footer.xhtml" />
+    </h:body>
 </html>
