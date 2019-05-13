@@ -66,7 +66,7 @@ create table jobapp
 
 
 /* Blog table */
-create table contacts
+create table blog
 (
     id serial primary key NOT NULL,
     blogtitle VARCHAR (99) NOT NULL,
