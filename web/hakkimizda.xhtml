@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+    <h:head>
+        <title>${home.title}</title>
+        <ui:include src="/partials/styles.xhtml" />
+    </h:head>
+
+    <h:body>
+        <div class="container-fluid">
+            <ui:include src="/partials/menu.xhtml" />
+        </div>
+      
+        <div class="container-fluid p-3 py-4 px-5" style="background: #e8f2f3;">
+            <h1 class="card-header">Hakkımızda</h1><br></br>
+            <div class="card-deck">
+                <div class="card">
+                    <div align="center"><br></br>
+                        <img class="card-text" width="90%" height="90%" src="resources/img/hakk1.jpg"></img>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">İstanbul Diş Hastanesi 7/24 hizmet vermektedir. İstanbul Diş Hastanesi ailesi olarak en temel ilkemiz hasta 
+                            hakları ve memnuniyeti ön planda tutularak dürüstlük kuralları çerçevesinde en kaliteli hizmeti en kısa sürede sunmaktır. 
+                            Bünyemizdeki uzman kadromuzun bilgi ve tecrübeleri ise bu ilkemiz ışığında bizi bir arada tutarak günden güne büyüyen bir 
+                            aile olmamıza destek sağlamaktadır. Önümüzdeki yıllarda ise İstanbul ve Türkiye’nin diğer illerinde de açmayı planladığı 
+                            yeni hastane ve poliklinikler ile Ağız ve Diş Sağlığı alanında bir hizmet zinciri oluşturma hedefine yönelik çalışmalarına 
+                            devam etmektedir. İstanbul Diş Hastanesi ailesi olarak ilkeleri bizimle aynı olan ve markamıza dahil olarak hizmet 
+                            zincirimiz içerisinde bulunmak isteyen hekimlere Franchise verilmektedir.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div align="center"><br></br>
+                        <img class="card-text" width="90%" height="90%" src="resources/img/hakk2.jpg"></img>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text"><b>Gülümseyin Burası İstanbul Diş Hastanesi…</b><br></br>
+                          İstanbul Diş Hastanesi temelleri 2 Ağustos 2001’de “İstanbul Ağız ve Diş Sağlığı Merkezi” adı altında 
+                          atılmıştır. İsminden de belli olduğu gibi ağız sağlığı ve diş sağlığı adı altında 29 Mayıs 2003’te ise “Diş Hastanesi” 
+                          ünvanını almıştır. 2008’de kuruluşundan beri gösterdiği gelişmeler ile ISO 9001:2000 standardizasyon belgesini almıştır.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+        <ui:include src="/partials/scripts.xhtml" />
+        <ui:include src="/partials/footer.xhtml" />
+    </h:body>
+</html>

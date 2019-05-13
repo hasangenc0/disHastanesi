@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      
+  xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>${home.title}</title>
+        <ui:include src="/partials/styles.xhtml" />
+    </h:head>
+
+    <h:body>
+      
+        <div class="container-fluid">
+            <ui:include src="/partials/menu.xhtml" />
+        </div>
+      
+        <div class="container-fluid p-3 py-4 px-5" style="background: #e8f2f3;">
+            
+            <h1 class="card-header">İletişim Bilgilerimiz</h1>
+            
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">İstanbul Diş Hastanesi: Yılmaz Mah. Bulvar Caddesi No:141/2 Avcılar / İSTANBUL</p>
+                    <p class="card-text">Telefon: 444 7 351 - (+90)212 857 64 10</p>
+                    <p class="card-text">Fax: (+90)212 857 64 19</p>
+                    <p class="card-text">E-Posta: dis@istanbulc.istanbul</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-body">
+                    <h:form>
+                        <h:inputText></h:inputText>
+                        
+                        <h:selectOneMenu>
+                            <f:selectItem />
+                            <f:selectItem />
+                        </h:selectOneMenu>
+                    </h:form>
+                    <p class="card-text">Telefon: 444 7 351 - (+90)212 857 64 10</p>
+                    <p class="card-text">Fax: (+90)212 857 64 19</p>
+                    <p class="card-text">E-Posta: dis@istanbulc.istanbul</p>
+                </div>
+            </div>
+            
+        </div>
+          
+        <ui:include src="/partials/scripts.xhtml" />
+        <ui:include src="/partials/footer.xhtml" />
+    </h:body>
+</html>
