@@ -236,5 +236,21 @@ public class User extends Database {
             return false;
         }
     }
+    
+    public static boolean updateDoctor(Doctor doctor) {
+        try (
+                Connection connection = DriverManager.getConnection(uri, user_name, pass);
+                PreparedStatement st = connection.prepareStatement("UPDATE doctors set first_name = ? second_name = ?  WHERE id = ?")) {
+            st.setString(1, doctor.getFirstName());
+            st.setString(2, doctor.getLastName());
+            st.setInt(3, doctor.getId());
+            st.executeUpdate();
+
+            return true;
+        } catch (SQLException e) {
+            System.out.println(e);
+            return false;
+        }
+    }
 
 }

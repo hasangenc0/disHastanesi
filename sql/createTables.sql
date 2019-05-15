@@ -8,7 +8,8 @@ create table "users"
   email character varying(50) NOT NULL,
   phone character varying(50) NOT NULL,
   password text NOT NULL,
-  admin boolean DEFAULT false
+  admin boolean DEFAULT false,
+  timestamp timestamp default current_timestamp
 )
 
 
