@@ -1,7 +1,7 @@
-# Diş Hastanesi Yazılımı
+# Dental Hospital Website
 
 ### Server
 - Glassfish Server 4.1.1
 
 ### Database
-- PostgreSQL
+- PostgreSQL 11.0
